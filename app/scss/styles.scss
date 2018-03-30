@@ -1,0 +1,312 @@
+@import 'longform-styles';
+@import 'philly-styles/values';
+@import 'video-strip';
+
+body {
+  background-color: rgb(241, 241, 241)!important;
+}
+
+#intro-container {
+  width: 100%;
+  background-color: #111111;
+  // margin-bottom: 75px;
+  #intro-static {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    display: flex;
+
+    #intro-text {
+      flex-basis: 40%;
+      position: relative;
+
+      #text-container {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        z-index: 2;
+        padding: 50px;
+        \ padding-left: 75px;
+
+        #headline {
+          font-size: 75px;
+          line-height: 0.9;
+          font-weight: 500;
+          // text-transform: uppercase;
+          font-family: $philly-serif;
+        }
+
+        #subhead {
+          font-size: 30px;
+          color: $project-yellow;
+          margin-top: 15px;
+        }
+
+        #byline {
+          color: #ddd;
+          font-weight: 200;
+          margin-top: 50px;
+        }
+
+        #pubdate {
+          color: #ddd;
+          font-weight: 200;
+        }
+      }
+    }
+
+    #intro-images {
+      height: 100%;
+      flex-basis: 60%;
+      position: relative;
+
+      div {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      #intro-blur {
+        width: 100%;
+        height: 100%;
+        background-image: url("http://media.philly.com/images/RS_x_20180330_HOPKINS08.jpg");
+        z-index: 1;
+        // background-color: black;
+        filter: blur(5px);
+        // filter: grayscale(100%);
+        // -webkit-filter: blur(5px);
+        // -moz-filter: blur(5px);
+        // -o-filter: blur(5px);
+        // -ms-filter: blur(5px);
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        right: 0;
+      }
+
+      #intro-clean {
+        width: 100%;
+        height: 100%;
+        background-image: url("http://media.philly.com/images/RS_x_20180330_HOPKINS08.jpg");
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+
+  #intro-safe {
+    height: 140vh;
+  }
+}
+
+#texture-1 {
+  position: absolute;
+  opacity: 0.2;
+
+  img {
+    filter: grayscale(60%);
+  }
+
+  .gradient {
+    position: absolute;
+    bottom: 0;
+    height: 400px;
+    width: 100%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+100&0+0,1+100 */
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(241,241,241,1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(241,241,241,1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(241,241,241,1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=  '#00ffffff', endColorstr='#f1f1f1',GradientType=0 );
+    /* IE6-9 */
+  }
+}
+
+.dropCap2 {
+  float: left;
+  color: $project-red;
+  font-size: 90px;
+  padding-top: 22px;
+  padding-right: 10px;
+  font-weight: 900;
+  padding-left: 3px;
+  font-family: $philly-sans;
+}
+
+p .large-p {
+  font-size: 30px;
+  color:$project-red
+}
+
+.fixedside {
+  position: relative;
+  height: auto;
+  display: inline-block;
+  float: right;
+  margin-left: 20px;
+  // max-width: 60%;
+  @include tablet {
+    max-width: 55%;
+  };
+  @include mobile {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    width: 100%;
+  };
+  @include BS-medium {
+    position: absolute;
+    height: auto;
+    left: 100px;
+    width: 100%;
+    display: flex;
+    max-width: none;
+  };
+}
+
+.inner-container {
+  justify-content: center;
+  width: auto;
+  height: auto;
+  margin: 0 0 0 15px;
+  @include mobile {
+    margin: 0;
+    padding: 15px 0;
+  };
+  @include BS-medium {
+    padding: 0 20px;
+    margin: 0 auto;
+  };
+  @include BS-large {
+    // padding: 0 65px;
+    max-width: 650px;
+    padding-right: 60px;
+  };
+}
+
+.imageFrame {
+  // @include transform(rotate(1deg));
+  background: white;
+  border: 5px solid #fff;
+  @include mobile {
+    border: none;
+  };
+  @include BS-medium {
+     @include box-shadow(3px 4px 15px 0 rgba(#000,0.3));
+  };
+}
+
+.sidebar {
+  background-color: hsla(0,0%,100%,.4);
+  padding: 15px 30px 20px;
+  border: 1px solid #ddd;
+
+  a {
+    color: #333333;
+    text-decoration: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: none;
+      color: $project-red;
+    }
+  }
+
+  .sidebar-text {
+    margin: 10px 0;
+    line-height: 1.2;
+  }
+}
+
+.containerQuote-custom {
+  border-top: 3px solid $project-red;
+  border-bottom: 3px solid $project-red;
+  padding: 40px 0;
+  margin: 20px 0 40px;
+
+  .containerQuoteText-custom {
+    font-family: $philly-sans;
+    color: $project-red;
+    font-size: 30px;
+    font-weight: 600;
+    font-style: italic;
+    position: relative;
+
+    .quote-large {
+      position: absolute;
+      font-size: 130px;
+      opacity: 0.8;
+      color: $project-yellow;
+      z-index: -1;
+
+      &.left-q {
+        top: -50px;
+        left: -15px;
+      }
+
+      &.right-q {
+        right: 0;
+      }
+    }
+  }
+}
+
+.yt-name {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999;
+  font-family: $philly-sans;
+  border-top: 0.5px solid #ddd;
+  padding-top: 10px;
+}
+
+.yt-title {
+  font-size: 28px;
+  color: #333;
+  font-family: $philly-serif;
+}
+
+.yt-outer {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 5px;
+  height: 0;
+  @include desktop {
+    position: relative;
+    padding-bottom: 0;
+    /* 16:9 */
+    padding-top: 0;
+    height: auto;
+  }
+  @include mobile {
+    margin: 0 15px;
+  }
+}
+
+.yt-outer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.yt-containerPhotoCaption {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px !important;
+  margin-bottom: 10px;
+}
+
+.project-subhead {
+  font-family:$philly-sans;
+  color:$project-red;
+  font-size:28px;
+  font-weight: 800;
+}
