@@ -47,7 +47,7 @@ body {
 
       #text-container {
         position: relative;
-        top:70%;
+        top: 70%;
         transform: translateY(-50%);
         color: white;
         z-index: 2;
@@ -209,12 +209,12 @@ body {
 
 .dropCap2 {
   float: left;
-    color: #a33c45;
-    font-size: 90px;
-    padding-top: 8px;
-    padding-right: 15px;
-    line-height: 1;
-    font-weight: 800;
+  color: #a33c45;
+  font-size: 90px;
+  padding-top: 8px;
+  padding-right: 15px;
+  line-height: 1;
+  font-weight: 800;
   font-family: $philly-sans;
   @include mobile {
     line-height: 1;
@@ -418,8 +418,9 @@ p .large-p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
   text-transform: uppercase;
-  font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif;
+  font-family: $philly-sans;
 
   .creditItem {
     padding: 6px 20px;

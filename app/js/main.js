@@ -1,5 +1,3 @@
-require("./video-strip.js")
-
 $(document).ready(function() {
 
   $(window).on("load resize", function(e) {
@@ -8,7 +6,6 @@ $(document).ready(function() {
       w = $(window).height(),
       ci = parseInt($(".content.is-subscriber").css("padding-top")),
       wh = w - h;
-    console.log(ci)
     $("#intro-container").css({
       "height": wh,
       "margin-top": (h - ci)
