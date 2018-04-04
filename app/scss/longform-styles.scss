@@ -19,7 +19,7 @@
     background-image: url("http://media.philly.com/images/RS_2400x_20180404_HOPKINS01_JJ.JPG");
     background-position: center;
     @include tablet {
-        background-size: cover;
+        background-attachment: scroll;
     }
 }
 

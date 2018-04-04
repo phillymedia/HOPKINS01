@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+  if ($(window).width() < 800) {
+     $("#item-0").appendTo("#item-0-target");
+  }
+
+
   $(window).on("load resize", function(e) {
 
     var h = $(".header").height(),
