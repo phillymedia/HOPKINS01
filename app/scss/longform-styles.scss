@@ -290,6 +290,9 @@
 .containerPhotoCaption {
     margin-top: 0.5em;
     padding: 0 0 80px;
+    @include mobile {
+      padding: 0 0 20px;
+    }
 }
 // ----------- ADS CSS --------------------
 
