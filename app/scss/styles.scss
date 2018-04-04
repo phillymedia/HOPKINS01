@@ -6,6 +6,19 @@ body {
   // background-color: rgb(241, 241, 241)!important;
 }
 
+#bkgimgc {
+  width: 100%;
+  padding-bottom: 50px;
+
+  .BackgroundImageCaption {
+    float: right;
+    text-align: right;
+    @include tablet {
+      width: 100% !important;
+    }
+  }
+}
+
 .custom-social-share {
   @include tablet {
     display: none;
@@ -170,12 +183,11 @@ body {
       #intro-clean {
         width: 100%;
         height: 100%;
-        background-image: url("http://media.philly.com/images/RS_x_20180330_HOPKINS08.jpg");
+        background-image: url("http://media.philly.com/images/RS_x_20180330_HOPKINS08_e1.jpg");
         position: relative;
         z-index: 1;
         top: 0;
         right: 0;
-        display: none;
       }
     }
   }
@@ -337,6 +349,7 @@ p .large-p {
     @include tablet {
       display: block;
     }
+
     h4 {
       @include tablet {
         display: inline;

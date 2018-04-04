@@ -16,7 +16,7 @@
 }
 
 #backgroundImage-2 {
-    background-image: url("http://media.philly.com/images/RS_2400x_20180404_HOPKINS01_JJ.JPG");
+    background-image: url("http://media.philly.com/images/RS_2400x_20180404_HOPKINS01_JJ_e1.JPG");
     background-position: center;
     @include tablet {
         background-attachment: scroll;
@@ -194,9 +194,7 @@
     margin-right: 5px;
     font-size: 13px;
     font-family: $philly-sans;
-    @include mobile {
-        display: none;
-    }
+
 }
 
 .headDisplay {
