@@ -32,6 +32,13 @@ $project-red: #a33c45;
     /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+
+@mixin w1200 {
+     @media only screen and (max-width: 1200px){
+        @content;
+    }
+}
+
 @mixin desktop {
      @media only screen and (max-width: 1000px){
         @content;

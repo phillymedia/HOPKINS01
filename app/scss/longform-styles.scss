@@ -194,9 +194,7 @@
     margin-right: 5px;
     font-size: 13px;
     font-family: $philly-sans;
-    @include mobile {
-        display: none;
-    }
+
 }
 
 .headDisplay {
