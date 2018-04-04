@@ -4,21 +4,32 @@ $(document).ready(function() {
 
   var h = $(".header").height(),
     w = $(window).height(),
+    ci = parseInt($(".content.is-subscriber").css("padding-top")),
     wh = w - h;
-
-    $("#intro-static").css({"height":wh, "top": h});
-    $("#intro-images").css("height", wh);
-  $(window).scroll(function() {
-    var top = $(window).scrollTop();
-    var height = $(window).height();
-
-    $('#intro-blur').css({
-      'opacity': ((height - top) / height)
-    });
+  console.log(ci)
+  $("#intro-container").css({
+    "height": wh,
+    "margin-top": (h - ci)
   });
+  $("#intro-images").css("height", wh);
 
-$(".quote").each(function(){
-  $(this).prepend("<span class='quote-large left-q'>&ldquo;</span>").append("<span class='quote-large right-q'>&rdquo;</span>");
-})
+  setTimeout(function() {
+    $("#intro-clean").fadeIn(2000);
+  }, 1000);
+
+  // $(window).scroll(function() {
+  //   var top = $(window).scrollTop();
+  //   var height = $(window).height();
+  //
+  //   $('#intro-blur').css({
+  //     'opacity': ((height - top) / height)
+  //   });
+  // });
+
+  $(".quote").each(function() {
+    $(this).prepend("<span class='quote-large left-q'>&ldquo;</span>")
+    // .append("<span class='quote-large right-q'>&rdquo;</span>")
+    ;
+  })
 
 });

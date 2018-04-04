@@ -16,7 +16,7 @@
 }
 
 #backgroundImage-2 {
-    background-image: url("http://media.philly.com/images/RS_2400x1500_20180329_HOPKINS01_CC.JPG");
+    background-image: url("http://media.philly.com/images/RS_2400x_20180404_HOPKINS01_JJ.JPG");
     background-position: center;
     @include tablet {
         background-size: cover;
@@ -189,8 +189,9 @@
 
 .BackgroundImageCaption {
     color: #888;
-    margin-top: -0.75em;
-    margin-left: 1em;
+    text-align: right;
+    margin-top: 2px;
+    margin-right: 5px;
     font-size: 13px;
     font-family: $philly-sans;
     @include mobile {
@@ -288,7 +289,7 @@
 
 .containerPhotoCaption {
     margin-top: 0.5em;
-    padding: 0 12px;
+    padding: 0 0 80px;
 }
 // ----------- ADS CSS --------------------
 

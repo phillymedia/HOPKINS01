@@ -3,7 +3,21 @@
 @import 'video-strip';
 
 body {
-  background-color: rgb(241, 241, 241)!important;
+  // background-color: rgb(241, 241, 241)!important;
+}
+
+.custom-social-share {
+  @include tablet {
+    display: none;
+  }
+}
+
+.col-md-9 img {
+  margin-top: 60px;
+}
+
+.containerPhotoCaption span {
+  font-size: 16px;
 }
 
 #intro-container {
@@ -11,47 +25,102 @@ body {
   background-color: #111111;
   // margin-bottom: 75px;
   #intro-static {
-    position: sticky;
+    // position: sticky;
     width: 100%;
     top: 0;
     display: flex;
+    @include mobile {
+      flex-wrap: wrap-reverse;
+    }
 
     #intro-text {
       flex-basis: 40%;
       position: relative;
+      @include tablet {
+        flex-basis: 50%;
+      }
+      @include mobile {
+        flex-basis: 100%;
+      }
 
       #text-container {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
+        position: absolute;
+        bottom: 5%;
         color: white;
         z-index: 2;
-        padding: 50px;
-        \ padding-left: 75px;
+        padding: 50px 50px 50px 75px;
+        @include desktop {
+          padding-left: 55px;
+        }
+        @include tablet {
+          font-size: 40px;
+          padding-left: 35px;
+        }
+        @include mobile {
+          position: relative;
+          text-align: center;
+          padding: 20px;
+          margin-top: 10px;
+          top: 100%;
+          transform: translateY(-100%);
+        }
 
         #headline {
-          font-size: 75px;
+          font-size: 70px;
           line-height: 0.9;
           font-weight: 500;
-          // text-transform: uppercase;
-          font-family: $philly-serif;
+          text-transform: uppercase;
+          font-family: $philly-sans;
+          -webkit-font-smoothing: antialiased;
+          @include desktop {
+            font-size: 50px;
+          }
+          @include tablet {
+            font-size: 30px;
+          }
         }
 
         #subhead {
-          font-size: 30px;
+          font-size: 22px;
           color: $project-yellow;
           margin-top: 15px;
+          font-family: $philly-sans;
+          line-height: 1.3;
+          -webkit-font-smoothing: antialiased;
+          @include desktop {
+            font-size: 20px;
+          }
+          @include tablet {
+            font-size: 16px;
+            margin-top: 10px;
+          }
         }
 
-        #byline {
+        #byline,
+        #byline a {
           color: #ddd;
           font-weight: 200;
-          margin-top: 50px;
+          margin-top: 20px;
+          font-size: 18px;
+          @include desktop {
+            font-size: 18px;
+          }
+          @include tablet {
+            font-size: 14px;
+            margin-top: 10px;
+          }
         }
 
         #pubdate {
-          color: #ddd;
+          color: #aaa;
           font-weight: 200;
+          font-size: 12px;
+          @include desktop {
+            font-size: 12px;
+          }
+          @include tablet {
+            font-size: 10px;
+          }
         }
       }
     }
@@ -60,6 +129,13 @@ body {
       height: 100%;
       flex-basis: 60%;
       position: relative;
+      @include tablet {
+        flex-basis: 50%;
+      }
+      @include mobile {
+        flex-basis: 100%;
+        height: 40vh !important;
+      }
 
       div {
         background-repeat: no-repeat;
@@ -89,10 +165,11 @@ body {
         width: 100%;
         height: 100%;
         background-image: url("http://media.philly.com/images/RS_x_20180330_HOPKINS08.jpg");
-        position: absolute;
-        z-index: -1;
+        position: relative;
+        z-index: 1;
         top: 0;
         right: 0;
+        display: none;
       }
     }
   }
@@ -129,18 +206,30 @@ body {
 
 .dropCap2 {
   float: left;
-  color: $project-red;
-  font-size: 90px;
-  padding-top: 22px;
-  padding-right: 10px;
-  font-weight: 900;
-  padding-left: 3px;
+    color: #a33c45;
+    font-size: 90px;
+    padding-top: 8px;
+    padding-right: 15px;
+    line-height: 1;
+    font-weight: 800;
   font-family: $philly-sans;
+  @include mobile {
+    line-height: 1;
+    display: block;
+    margin: 0 0.1em -0.2em 0;
+    font-size: 65px;
+    padding-top: 5px;
+    padding-right: 5px;
+  }
 }
 
 p .large-p {
   font-size: 30px;
-  color:$project-red
+  color: $project-red;
+  @include mobile {
+    font-size: 20px;
+    line-height: 1;
+  }
 }
 
 .fixedside {
@@ -150,6 +239,9 @@ p .large-p {
   float: right;
   margin-left: 20px;
   // max-width: 60%;
+  @include desktop {
+    left: 0 !important;
+  };
   @include tablet {
     max-width: 55%;
   };
@@ -202,10 +294,9 @@ p .large-p {
 }
 
 .sidebar {
-  background-color: hsla(0,0%,100%,.4);
+  background-color: rgba(215, 215, 215, 0.3);
   padding: 15px 30px 20px;
-  border: 1px solid #ddd;
-
+  // border: 1px solid #ddd;
   a {
     color: #333333;
     text-decoration: none;
@@ -225,23 +316,29 @@ p .large-p {
 }
 
 .containerQuote-custom {
-  border-top: 3px solid $project-red;
-  border-bottom: 3px solid $project-red;
+  border-top: 2px solid $project-red;
+  // border-bottom: 2px solid $project-red;
   padding: 40px 0;
-  margin: 20px 0 40px;
+  margin: 30px 0 20px;
 
   .containerQuoteText-custom {
-    font-family: $philly-sans;
-    color: $project-red;
+    font-family: $philly-serif;
+    color: #666666;
     font-size: 30px;
     font-weight: 600;
-    font-style: italic;
+    // font-style: italic;
     position: relative;
+    margin-top: -20px;
+
+    &.quote {
+      margin-top: 0;
+    }
 
     .quote-large {
       position: absolute;
-      font-size: 130px;
-      opacity: 0.8;
+      font-size: 190px;
+      margin-top: -40px;
+      opacity: 0.4;
       color: $project-yellow;
       z-index: -1;
 
@@ -305,8 +402,31 @@ p .large-p {
 }
 
 .project-subhead {
-  font-family:$philly-sans;
-  color:$project-red;
-  font-size:28px;
+  font-family: $philly-sans;
+  color: $project-red;
+  font-size: 28px;
   font-weight: 800;
+}
+
+.credits {
+  width: 100%;
+  padding: 50px 20px 20px;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Gotham Narrow,Arial,sans-serif;
+
+  .creditItem {
+    padding: 6px 20px;
+    font-weight: 500;
+    color: #222;
+    font-size: 14px;
+
+    .title {
+      font-weight: 100;
+      color: gray;
+    }
+  }
 }
