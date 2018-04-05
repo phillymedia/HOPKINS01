@@ -41,6 +41,9 @@ body {
   background-color: #111111;
   overflow: hidden;
   position: relative;
+  @include mobile {
+    height: auto !important;
+  }
   // margin-bottom: 75px;
   #intro-static {
     // position: sticky;
@@ -63,7 +66,7 @@ body {
 
       #text-container {
         position: relative;
-        top: 70%;
+        top: 40%;
         transform: translateY(-50%);
         color: white;
         z-index: 2;
@@ -100,7 +103,7 @@ body {
         }
 
         #subhead {
-          font-size: 22px;
+          font-size: 16px;
           color: $project-yellow;
           margin-top: 15px;
           font-family: $philly-sans;
